@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    
+}
+
+/*Portada*/
+.containerImage{
+    
+}
+.bartop{
+    width: 80%;
+    right: 0;
+    background: #444242;
+    color: white;
+    
+}
+.bartop a{
+    text-decoration: none;
+}
+.bartop p{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.divheader{
+    position: fixed;
+    width: 20%;
+    height: 100%;
+    background: #444242;
+    color: white;
+
+}
+.divUser i{
+    font-size: 100px;
+    margin-top: 15px;
+}
+.divcontainer{
+    width: 80%;
+    background: #9a999e;
+    background: white;
+    
+    overflow: hidden;
+}
+.divcontainer h4{
+    margin-top: 30px;
+}
+.divcontainer div{
+    
+    height: 200px;
+}
+.divcontainer div img{
+    height: 100%;
+    cursor: pointer;
+}
+
+.listaHeader{
+    margin-top: 30px;
+}
+.listaHeader p{
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.listaHeader p:hover{
+    background: #58167d;
+}
+.listaHeader li{
+    list-style: none;
+}
+.material-icons{
+    display: inline-block;
+    margin: 0;
+    vertical-align: top;
+}
+
+footer{
+    margin-top: 100px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}

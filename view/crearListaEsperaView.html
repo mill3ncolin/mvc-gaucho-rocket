@@ -1,0 +1,50 @@
+
+{{>header}}
+<br><br><br><br><br>
+<div class="container">
+
+
+        {{#mensaje}}
+		    <div class="alert alert-danger" role="alert">
+ <p>{{{mensaje}}}</p>
+		    </div>
+        {{/mensaje}}
+
+
+<div class="container">
+<form action="/mvc-gaucho-rocket/reserva/realizarEspera" class="form-neon" method="post">
+
+<div>
+ <h2>Si desea, puede esperar a que se libere un lugar en el vuelo: </h2><br>
+    <div>
+        <p>{{#vuelo}}
+            <input type="hidden" name="vuelo" value="{{id_vuelo}}">
+        ({{tipo_equipo}}) {{nombre_origen}} - {{nombre_destino}} {{fecha}} {{hora}}
+            <a class="btn btn-outline-primary border-0" href="/mvc-gaucho-rocket/reserva">Editar</a>
+            {{/vuelo}}</p>
+        <p>{{#cabina}}Cabina tipo <b>{{nombre}}</b>
+            <input type="hidden" name="cabina" value="{{id_cabina}}">
+            {{/cabina}},
+            {{#servicio}}
+            servicio tipo <b>{{nombre}}</b>
+            <input type="hidden" name="servicio" value="{{id_servicio}}">
+            {{/servicio}}
+            {{#vuelo}}
+            <button form="cabina" class="btn btn-outline-primary border-0" type="submit" name="vuelo" value="{{id_vuelo}}">Editar</button>
+            {{/vuelo}}
+        </p>
+    </div>
+ 
+</div>
+<br><br>
+
+
+       <p class="text-center" style="margin-top: 40px;">
+            <button type="submit" class="btn btn-raised btn-info btn-sm">Sumarse a la lista de espera</button>
+        </p>
+
+</form>
+    <form id="cabina" method="post" action="/mvc-gaucho-rocket/reserva/seleccionarCabinas"></form>
+</div> 
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{{>footer}}

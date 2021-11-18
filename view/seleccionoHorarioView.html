@@ -1,0 +1,59 @@
+
+{{>header}}
+<br><br><br><br><br>
+<div class="container">
+
+
+        {{#mensaje}} 
+		    <div class="alert alert-success" role="alert">
+ <p>{{{mensaje}}}</p>
+		    </div>
+        {{/mensaje}}
+
+
+<div class="container">
+    <h2>Seleccione Horario</h2>
+
+    <br>
+<form action="/mvc-gaucho-rocket/reserva/procesarHorario" class="form-neon" method="POST">
+   
+   
+<div>
+ <label>Horarios:</label>
+ <select name="vuelo" id="vuelo"  class="form-control">
+        {{#vuelos}} 
+		<option value="{{id_vuelo}}">{{hora}}</option>
+        {{/vuelos}}
+
+</select>
+</div>
+<br><br>
+
+
+<div>
+ <label>Cabina:</label>
+ <select name="cabina" id="cabina"  class="form-control">
+
+        {{#cabinas}} 
+		<option value="{{id_cabina}}">{{nombre}}</option>
+        {{/cabinas}}
+   
+
+</select>
+</div>
+<br><br>
+
+ 
+
+
+ 
+
+       <p class="text-center" style="margin-top: 40px;">
+            <button type="submit" class="btn btn-raised btn-info btn-sm">Buscar disponibilidad</button>
+        </p>
+		
+</form>
+
+</div> 
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{{>footer}}

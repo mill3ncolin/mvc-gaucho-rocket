@@ -1,0 +1,33 @@
+{{> headerLogin}}
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+    <h2 class="w3-wide">Verificacion</h2>
+	<p>{{mensaje}}</p>
+	
+ 
+	{{^muestroForm}}
+ <P>
+ <form method="POST" action="/mvc-gaucho-rocket/registro/resultadoVerificacion" class="form-neon">
+
+<input type="hidden" name="codigo_alta" value="{{codigo_alta}}">
+ 
+                      <div class="form-group">
+                            <label for="usuario_nombre" class="bmd-label-floating">Email:</label>
+							
+<input type="text" name="email" placeholder="Email:" class="form-control">
+
+</div>
+            <div class="form-group">
+                            <label for="usuario_nombre" class="bmd-label-floating">Password:</label>
+<input type="password" name="pass" placeholder="Password:" class="form-control">
+</div>
+
+<input type="submit" value="Validar" name="Validar"  class="btn btn-raised btn-info btn-sm">
+</form>
+</P>
+{{/muestroForm}}
+
+
+</div>
+{{> footer}}
+
+ 

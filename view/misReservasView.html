@@ -1,0 +1,67 @@
+
+{{>header}}
+<br><br><br><br><br>
+<div class="container">
+
+
+        {{#mensaje}} 
+		    <div class="alert alert-success" role="alert">
+ <p>{{{mensaje}}}</p>
+		    </div>
+        {{/mensaje}}
+
+
+<div class="container">
+    {{#titulo}}
+    <h2>{{titulo}}</h2>
+    <h4>{{origenDestino}}</h4>
+    <input type="hidden" name="origen" value="{{idOrigen}}">
+    <input type="hidden" name="destino" value="{{idDestino}}">
+    {{/titulo}}
+
+    <br>
+
+    {{#vuelosDisponibles}}
+    <hr>
+        <h4>{{vuelosDisponibles}}</h4>
+    {{/vuelosDisponibles}}
+        <h2>Mis reservas {{#titulo}}" {{titulo}} "{{/titulo}}</h2>
+        <a href="/mvc-gaucho-rocket/reserva"><button type="button" class="btn btn-outline-secondary">Reservar vuelo</button></a>
+<table class="table table-hover" style="    font-size: 0.9em;">
+    <tr>
+         <th>Cod. Reserva</th>
+        <th>T. Equipo</th>
+        <th>Fecha</th>
+		<th>Hora</th>
+        <th>Origen</th>
+        <th>Destino</th>
+        <th>Asiento</th>
+        <th>Cabina</th>
+        <th>Servicio</th>
+        <th>Abonar</th>
+        <th>Comprobante</th>
+    </tr>
+    {{#reservas}}
+    <tr>
+         <td>{{codigo_reserva}}</td>
+        <td>({{tipo_equipo}})</td>
+        <td>{{fecha}}</td> 
+		<td>{{hora}}</td>
+        <td>{{origen}}</td>
+        <td>{{destino}}</td>
+        <td>{{asiento}}</td>
+        <td>{{cabina}}</td>
+        <td>{{nombre_servicio}}</td>
+        <td><a href="/mvc-gaucho-rocket/misReservas/abonarConMercadoPago?id_reserva={{id_reserva}}"   class="btn btn-info"> Abonar</a></a></td>
+        <td><a href="/mvc-gaucho-rocket/misReservas/pdf?id_reserva={{id_reserva}}" target="_blank" class="btn btn-success"> Descargar PDF</a></a></td>
+    </tr>
+    {{/reservas}}
+</table>
+
+</div> 
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+ 
+
+
+{{>footer}}

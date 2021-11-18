@@ -1,0 +1,75 @@
+
+{{>header}}
+<br><br><br><br><br>
+<div class="container">
+
+
+        {{#mensaje}} 
+		    <div class="alert alert-success" role="alert">
+ <p>{{{mensaje}}}</p>
+		    </div>
+        {{/mensaje}}
+
+
+		{{#nivel}}
+			    <div class="alert alert-success" role="alert">
+ <p>Nivel de vuelo: {{nivel}}</p>
+		    </div> 
+		{{/nivel}}
+		
+<div class="container">
+    <form action="/mvc-gaucho-rocket/reserva/seleccionarCabinas" class="form-neon" method="POST">
+    {{#titulo}}
+    <h2>{{titulo}}</h2>
+    <h4>{{origenDestino}}</h4>
+    <input type="hidden" name="origen" value="{{idOrigen}}">
+    <input type="hidden" name="destino" value="{{idDestino}}">
+    {{/titulo}}
+
+    <br>
+
+    {{#vuelosDisponibles}}
+    <hr>
+        <h4>{{vuelosDisponibles}}</h4>
+    {{/vuelosDisponibles}}
+	
+	
+	
+	<style>
+	.AA1{
+	display:none;
+	}
+	
+	.AA2{
+	display:none;
+	}
+	</style>
+<table class="table table-hover">
+    {{#vuelos}}
+    <tr>
+        <td>
+		{{#nivel}}
+		<input type="radio" name="vuelo" value="{{id_vuelo}}" required class="{{tipo_equipo}}{{nivel}}">
+		{{/nivel}}
+		
+		</td>
+        <td>({{tipo_equipo}})</td>
+        <!--<td>{{id_vuelo}}</td>-->
+        <td>{{nombre_origen}}</td>
+        <td>{{nombre_destino}}</td>
+        <td>{{fecha}}</td>
+        <td>{{estado}}</td>
+        <td>{{hora}}</td>
+    </tr>
+    {{/vuelos}}
+</table>
+
+    <p class="text-center" style="margin-top: 40px;">
+        <button type="submit" class="btn btn-raised btn-info btn-sm">Reservar vuelo</button>
+    </p>
+		
+</form>
+
+</div> 
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{{>footer}}

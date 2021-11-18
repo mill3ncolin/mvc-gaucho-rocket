@@ -1,0 +1,46 @@
+
+{{>header}}
+<br><br><br><br><br>
+<div class="container">
+
+
+        {{#mensaje}} 
+		    <div class="alert alert-success" role="alert">
+ <p>{{{mensaje}}}</p>
+		    </div>
+        {{/mensaje}}
+
+
+<div class="container">
+    <h2>Seleccione Ubicacion</h2>
+
+    <br>
+<form action="/mvc-gaucho-rocket/reserva/procesarUbicacion" class="form-neon" method="POST">
+   
+   
+<div>
+ <label>Cantidad de cabinas:</label>
+         {{#cabinasDelVuelo}}  {{cantidad}} 
+        {{/cabinasDelVuelo}}
+
+ 
+</div>
+<br><br>
+
+ 
+<br><br>
+
+ 
+
+
+ 
+
+       <p class="text-center" style="margin-top: 40px;">
+            <button type="submit" class="btn btn-raised btn-info btn-sm">Buscar disponibilidad</button>
+        </p>
+		
+</form>
+
+</div> 
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{{>footer}}

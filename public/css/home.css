@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    
+}
+
+/*Portada*/
+.containerImage{
+    background: rgba(0,0,0,1);
+    background-image: url(../imagenes/home/home.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    /*width: 100vw;*/
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+.divheader{
+    color: white;
+    height: auto;
+    overflow: hidden;
+    
+    width: 480px;
+    margin: auto;
+}
+.imglogo{
+    margin: 70px;
+    width: 15%;
+}
+.listaHeader{
+    overflow: hidden;
+    margin: auto;
+}
+.listaHeader a{
+    text-decoration: none;
+}
+.listaHeader li{
+    float: left;
+    list-style: none;
+    margin: 10px;
+    cursor: pointer;
+    border-bottom: solid 4px rgba(0,0,0,0);
+}
+.listaHeader li:hover{
+    border-bottom: solid 4px #58167d;
+}
+.reserva{
+
+}
+.reserva a{
+    padding: 10px;
+    background: #58167d;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.container1,.container2{
+    display: flex;
+    background-color: dodgerblue;
+    flex-direction: row;
+    justify-content: center;
+    background: white;
+    margin-top: 30px;
+    position: relative;
+}
+@media(max-width:800px){
+    .container1{
+        width: 100%;
+    }
+}
+.container1 div h1{
+    text-decoration: underline #58167d;
+}
+.container1 div p{
+    font-size: 15pt;
+}
+.container1 div:nth-child(1){
+    width: 350px;
+}
+.container1 div:nth-child(2){
+    height: 500px;
+    
+    background-image: url(../imagenes/home/estacion-espacial-internacional.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 60%;
+}
+.pn{
+    position: absolute;
+    width: 100px;
+    bottom: 0;
+}
+
+.container2{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.container2 h2{
+    background: white;
+    float: left;
+    padding: 10px;
+    margin-top: -10px;
+}
+.container2>div{
+    width: 30%;
+    height: 200px;
+    margin: 10px;
+    cursor: pointer;
+    border-bottom: solid 4px white;
+}
+.container2>div:hover{
+    border-bottom: solid 4px #58167d;
+}
+.container2 div:nth-child(1){
+    background-image: url(../imagenes/home/1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.container2 div:nth-child(2){
+    background-image: url(../imagenes/home/2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.container2 div:nth-child(3){
+    background-image: url(../imagenes/home/3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+footer{
+    background: #333233;
+    color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.divfooter{
+    background: #333233;
+    color: #F2F1F1;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size:10pt;
+}
+.divfooter a{
+    text-decoration: none;
+}
+
+
+

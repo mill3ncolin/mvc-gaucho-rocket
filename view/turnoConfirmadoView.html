@@ -1,0 +1,40 @@
+{{>header}}
+<br><br><br><br><br>
+<div class="container">
+
+
+        {{#mensaje}} 
+		    <div class="alert alert-success" role="alert">
+ <p>{{{mensaje}}}</p>
+		    </div>
+        {{/mensaje}}
+		
+
+ 
+<div class="container">
+    <h1>Mi turno</h1><hr>
+    <div class="card">
+        <div class="card-body">
+ 
+ <p><label>Nombre:</label><strong>{{nombre}}</strong></p>
+<p><label>Apellido:</label><strong>{{apellido}}</strong></p>
+<p><label>Email:</label><strong>{{email}}</strong></p>
+<br><br>
+     {{#turno}} 
+<p><label>Fecha:</label><strong>{{fecha}}</strong></p>
+<p><label>Centro:</label><strong>{{nombre}}, {{descripcion}}</strong></p>
+
+    <form class="float-left" action="/mvc-gaucho-rocket/medico/procesarChequeoMedico" method="post">
+        <input type="hidden" name="idTurno" value="{{id_turno}}">
+        <button type="submit" class="btn btn-primary">Realizar chequeo</button>
+    </form>
+
+            <form class="float-right" action="/mvc-gaucho-rocket/medico/bajaTurno" method="post">
+            <button type="submit" name="idTurno" value="{{id_turno}}" class="btn btn-outline-danger">Baja turno</button>
+            </form>
+    {{/turno}}
+
+        </div></div>
+</div> 
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{{>footer}}

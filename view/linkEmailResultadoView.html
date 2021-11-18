@@ -1,0 +1,27 @@
+{{>header}}
+<br><br><br><br><br>
+<div class="container">
+
+
+
+
+		
+    <div class="alert alert-success" role="alert">
+        <strong></strong> Link del Resultado del chequeo médico
+    </div>
+    <br><br>
+<div class="container">
+<p>Al hacer clic confirma el resultado:</p>
+<form action="/mvc-gaucho-rocket/medico/resultadoMedico"  method="POST">
+ 
+<input type="hidden" value="{{id_turno}} " name="id_turno">
+
+       <p class="text-center" style="margin-top: 40px;">
+            <button type="submit" class="btn btn-raised btn-info btn-sm">Confirmar Resultado</button>
+        </p>
+		
+</form>
+
+</div> 
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{{>footer}}

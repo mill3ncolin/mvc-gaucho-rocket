@@ -1,0 +1,61 @@
+
+{{>header}}
+<br><br><br><br><br>
+<div class="container">
+
+
+        {{#mensaje}} 
+		    <div class="alert alert-success" role="alert">
+ <p>{{{mensaje}}}</p>
+		    </div>
+        {{/mensaje}}
+
+
+<div class="container">
+    {{#titulo}}
+    <h2>{{titulo}}</h2>
+    <h4>{{origenDestino}}</h4>
+    <input type="hidden" name="origen" value="{{idOrigen}}">
+    <input type="hidden" name="destino" value="{{idDestino}}">
+    {{/titulo}}
+
+    <br>
+
+    {{#vuelosDisponibles}}
+    <hr>
+        <h4>{{vuelosDisponibles}}</h4>
+    {{/vuelosDisponibles}}
+        <h2>Lista de espera</h2>
+        <a href="/mvc-gaucho-rocket/reserva"><button type="button" class="btn btn-outline-secondary">Reservar vuelo</button></a>
+<table class="table table-hover">
+    <tr>
+        <th>Cod. Espera</th>
+        <th>T. Equipo</th>
+        <th>Fecha</th>
+        <th>Origen</th>
+        <th>Destino</th>
+        <th>Cabina</th>
+        <th>Servicio</th>
+        <th>Hora</th>
+        <th>Cancelar</th>
+     </tr>
+    {{#esperas}}
+    <tr>
+        <td>{{id_espera}}</td>
+        <td>({{tipo_equipo}})</td>
+        <td>{{fecha}}</td>
+        <td>{{origen}}</td>
+        <td>{{destino}}</td>
+        <td>{{cabina}}</td>
+        <td>{{nombre_servicio}}</td>
+        <td>{{hora}}</td>
+        <td><a href="/mvc-gaucho-rocket/MisReservas/eliminarEspera?id_espera={{id_espera}}" class="btn btn-danger"
+		onclick="return confirm('¿Esta seguro de dejar la lista de espera?');">Cancelar Espera</a></td>
+         
+    </tr>
+    {{/esperas}}
+</table>
+
+</div> 
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{{>footer}}

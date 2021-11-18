@@ -1,0 +1,50 @@
+
+{{>header}}
+<br><br><br><br><br>
+<div class="container">
+
+
+        {{#mensaje}} 
+		    <div class="alert alert-success" role="alert">
+ <p>{{{mensaje}}}</p>
+		    </div>
+        {{/mensaje}}
+
+
+<div class="container">
+<form action="/mvc-gaucho-rocket/reserva/seleccionarAsiento" class="form-neon" method="post">
+    <input type="hidden" name="vuelo" value="{{vuelo}}">
+<div>
+    <label>Seleccionar cabina:</label>
+ <select required name="cabina" class="form-control">
+     <option value="">Cabina</option>
+        {{#cabina}}
+		<option value="{{id_cabina}}">{{nombre}}</option>
+        {{/cabina}}
+
+</select>
+</div>
+<br><br>
+
+<div>
+    <label>Seleccionar servicio de a bordo:</label>
+ <select required name="servicio"  class="form-control">
+     <option value="">Servicio</option>
+        {{#servicio}}
+		<option value="{{id_servicio}}">{{nombre}}</option>
+        {{/servicio}}
+
+</select>
+</div>
+<br><br>
+
+
+       <p class="text-center" style="margin-top: 40px;">
+            <button type="submit" class="btn btn-raised btn-info btn-sm">Buscar disponibilidad</button>
+        </p>
+		
+</form>
+
+</div> 
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{{>footer}}

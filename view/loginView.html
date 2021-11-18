@@ -1,0 +1,46 @@
+{{>headerLogin}}
+<br><br><br><br><br>
+{{#msg}}
+<div class="container"><div class="alert alert-danger" role="alert">
+        <strong></strong> {{msg}}
+    </div></div>
+{{/msg}}
+{{#msgRegistro}}
+<div class="container"><div class="alert alert-success" role="alert">
+    <strong></strong> {{msgRegistro}}
+</div></div>
+{{/msgRegistro}}
+<!-- Content -->
+<div class="container-fluid">
+    <style>form{width: 500px;margin: auto;}@media(max-width:600px){form{width: 100%;}}</style>
+    <form action="/mvc-gaucho-rocket/Login/procesarLogin" class="form-neon" method="POST" data-form="save" autocomplete="off">
+        <div class="container" style="text-align:center;"><h3>Login</h3></div><br>
+        <fieldset>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-md-12">
+                        <div class="form-group">
+                            <label for="usuario_email" class="bmd-label-floating">Email</label>
+                            <input required type="email" class="form-control" name="email" maxlength="70">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12">
+                        <div class="form-group">
+                            <label for="usuario_clave_1" class="bmd-label-floating">Contraseña</label>
+                            <input type="password" class="form-control" name="clave"  maxlength="100" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <br>
+        <p class="text-center" style="margin-top: 40px;">
+            <button type="submit" class="btn btn-raised btn-info btn-sm">Iniciar sesión</button>
+        </p>
+        <hr>
+        <p class="text-center" style="margin-top: 40px;">
+            <a href="/mvc-gaucho-rocket/registro" class="btn">Registrarme</a></p>
+    </form><br><br>
+</div>
+<br><br>
+{{>footer}}

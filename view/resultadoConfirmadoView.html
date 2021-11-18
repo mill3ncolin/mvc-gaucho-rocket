@@ -1,0 +1,34 @@
+{{>header}}
+<br><br><br><br><br>
+<div class="container">
+
+
+
+<div class="container">
+    {{#mensaje}}
+    <div class="alert alert-success" role="alert">
+        <p>{{{mensaje}}}</p>
+    </div>
+    {{/mensaje}}
+
+
+    <br>
+
+    <div class="card">
+        <div class="card-body">
+ 
+ <p><label>Nombre:</label><strong>{{nombre}}</strong></p>
+<p><label>Apellido:</label><strong>{{apellido}}</strong></p>
+<p><label>Email:</label><strong>{{email}}</strong></p>
+<br><br>
+     {{#turno}} 
+<p><label>Fecha:</label><strong>{{fecha}}</strong></p>
+<p><label>Centro:</label><strong>{{nombre}}, {{descripcion}}</strong></p>
+            <h3>Codigo de viajero: <strong>{{nivel}}</strong></h3>
+
+    {{/turno}}
+
+        </div></div>
+</div> 
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{{>footer}}

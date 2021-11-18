@@ -1,0 +1,67 @@
+
+{{>header}}
+<br><br><br><br><br>
+<div class="container">
+    <div class="alert alert-success" role="alert">
+        <strong></strong> Panel de control   
+    </div>
+    <br><br>
+<div class="container">
+<p>
+    <a href="/mvc-gaucho-rocket/medico"><button type="button" class="btn btn-outline-secondary">Realizar chequeo médico</button></a>
+
+</p>
+
+
+	
+<p>
+    <a href="/mvc-gaucho-rocket/reserva"><button type="button" class="btn btn-outline-secondary">Reservar Vuelo</button></a>
+
+</p>
+
+
+ 
+
+    <p class="float-right">
+        <a href="/mvc-gaucho-rocket/MisReservas/espera"><button type="button" class="btn btn-outline-primary border-0">Lista de espera</button></a>
+
+    </p>
+	
+	    <p class="float-right">
+        <a href="/mvc-gaucho-rocket/MisReservas"><button type="button" class="btn btn-outline-primary border-0">Mis reservas</button></a>
+
+    </p>
+	
+	
+<p class="float-right">
+        <a href="/mvc-gaucho-rocket/MisReservas/abonadas"><button type="button" class="btn btn-outline-primary border-0">Compras Realizadas</button></a>
+
+    </p>
+	
+<p class="float-right">
+        <a href="/mvc-gaucho-rocket/MisReservas/enProceso"><button type="button" class="btn btn-outline-primary border-0">Compras Pendientes</button></a>
+
+    </p>
+	
+	
+ 
+
+    <table class="table table-hover">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Rol del usuario</th>
+        </tr>
+        {{#resultado}}
+        <tr>
+            <td>{{nombre}}</td>
+            <td>{{apellido}}</td>
+            <td>{{rol_usuario}}</td>
+
+        </tr>
+        {{/resultado}}
+    </table>
+</div>
+    <br>
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{{>footer}}

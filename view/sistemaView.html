@@ -1,0 +1,46 @@
+{{>headerSistema}}
+        <!-- Page content-->
+        <div class="container-fluid">
+            <h3 class="mt-4">Lista de usuarios</h3><br>
+
+            <table class="table table-hover">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Rol del usuario</th>
+
+                    <th></th>
+                </tr>
+                {{#resultado}}
+                <tr>
+                    <th scope="row">{{id}}</th>
+                    <td>{{nombre}}</td>
+                    <td>{{apellido}}</td>
+                    <td>{{email}}</td>
+                    <td>{{descripcion}}</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">Cambiar rol del usuario</button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <form action="/mvc-gaucho-rocket/sistema/cambiarRolDelUsuario" method="post">
+                                    <input type="hidden" name="id_usuario" value="{{id}}">
+                                    <button class="dropdown-item" type="submit" name="rol_usuario" value="1">Administrador</button>
+                                    <button class="dropdown-item" type="submit" name="rol_usuario" value="2">Usuario</button>
+                                </form>
+                            </div>
+
+                            <button form="eliminar" class="btn btn-outline-danger" type="submit" name="id_usuario" value="{{id}}">Eliminar</button>
+                        </div>
+
+                    </td>
+
+                </tr>
+                {{/resultado}}
+            </table>
+            <form id="eliminar" method="post" action="/mvc-gaucho-rocket/sistema/eliminarUsuario"></form>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{{>footer}}
+    </div>
+</div>

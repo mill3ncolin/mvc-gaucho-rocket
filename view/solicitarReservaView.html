@@ -1,0 +1,51 @@
+
+{{>header}}
+<br><br><br><br><br>
+<div class="container">
+
+
+        {{#mensaje}} 
+		    <div class="alert alert-success" role="alert">
+ <p>{{{mensaje}}}</p>
+		    </div>
+        {{/mensaje}}
+
+
+<div class="container">
+    <h2>Formulario para solicitar Reserva</h2>
+
+    <br>
+<form action="/mvc-gaucho-rocket/reserva/procesarDisponibilidad" class="form-neon" method="get">
+ 
+<div>
+ <label>Origen:</label>
+ <select name="origen" id="origen"  class="form-control">
+        {{#destinos}} 
+		<option value="{{id_destino}}">{{nombre}}</option>
+        {{/destinos}}
+
+</select>
+</div>
+<br><br>
+
+<div>
+ <label>Destino:</label>
+ <select name="destino" id="destino"  class="form-control">
+        {{#destinos}} 
+		<option value="{{id_destino}}">{{nombre}}</option>
+        {{/destinos}}
+
+</select>
+</div>
+<br><br>
+
+
+       <p class="text-center" style="margin-top: 40px;">
+            <button type="submit" class="btn btn-raised btn-info btn-sm">Buscar disponibilidad</button>
+        </p>
+		
+</form>
+
+</div> 
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{{>footer}}

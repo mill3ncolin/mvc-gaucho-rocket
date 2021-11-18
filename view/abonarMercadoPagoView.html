@@ -1,0 +1,72 @@
+
+{{>header}}
+<br><br><br><br><br>
+<div class="container">
+
+
+        {{#mensaje}} 
+		    <div class="alert alert-success" role="alert">
+ <p>{{{mensaje}}}</p>
+		    </div>
+        {{/mensaje}}
+
+
+<div class="container">
+     {{#reserva}}
+        <h2>Abonar Reserva ${{valor}}</h2> 
+		
+ 		<p>Mediante el siguiente boton podra abonar la reserva generada.</p>
+		   
+
+<!-- 5031 7557 3453 0604	-->
+ 
+<h2>Cod. Reserva: {{codigo_reserva}}</h2>
+<h2>Nivel de vuelo: {{nivel_vuelo}}</h2>
+
+<table  >
+<tr>
+<td>T. Equipo</td> <td>({{tipo_equipo}})</td>
+</tr>
+<tr>
+<td>Fecha</td> <td>{{fecha}}</td>
+</tr>
+<tr>
+<td>Origen</td> <td>{{origen}}</td>
+</tr>
+<tr>
+<td>Destino</td> <td>{{destino}}</td>
+</tr>
+<tr>
+<td>Asiento</td> <td>{{asiento}}</td>
+</tr>
+<tr>
+<td>Cabina</td> <td>{{cabina}}</td>
+</tr>
+<tr>
+<td>Servicio</td> <td>{{nombre_servicio}}</td>
+</tr>
+<tr>
+<td>Hora</td> <td>{{hora}}</td> 
+
+</tr>
+
+</table>
+
+ 
+ 
+     {{/reserva}}
+
+	 <br><br>
+<script
+  src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
+  data-preference-id="{{mercadoPago}}">
+</script>
+		
+ 
+</div> 
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+ 
+
+
+{{>footer}}

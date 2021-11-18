@@ -1,0 +1,37 @@
+{{>header}}
+<br><br><br><br><br>
+<div class="container">
+
+
+        {{#mensaje}} 
+		    <div class="alert alert-success" role="alert">
+ <p>{{{mensaje}}}</p>
+		    </div>
+        {{/mensaje}}
+
+
+
+    <div class="alert alert-success" role="alert">
+        <strong></strong> Link del Turno
+    </div>
+    <br><br>
+<div class="container">
+
+
+<p > Debe confirmar el turno mediante su email.</p>
+
+
+<form action="/mvc-gaucho-rocket/medico/confirmarTurno"  method="GET" style="display:none;">
+<p>Al hacer clic confirma el turno:</p>
+ 
+<input type="hidden" value="{{id_turno}} " name="id_turno">
+
+       <p class="text-center" style="margin-top: 40px;">
+            <button type="submit" class="btn btn-raised btn-info btn-sm">Confirmar Turno</button>
+        </p>
+		
+</form>
+
+</div> 
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{{>footer}}

@@ -1,0 +1,66 @@
+ 
+<style>
+
+.divCentral{
+    width: 510px;
+    height: 700px;
+    border: 2px solid ;
+    text-align: center;
+}
+
+.divCentral2{
+    width: 470px;
+    height: 670px;
+	margin-left:0.7em;
+	margin-top:0.7em;
+  border: #ccc 5px dashed;
+    text-align: center;
+}
+
+
+</style>
+    {{#reservas}}
+<div class="divCentral" >
+<div class="divCentral2" >
+<h1>Boarding Pass</h1>
+<h2>Cod. Reserva: {{codigo_reserva}}</h2>
+<h2>Nivel de vuelo: {{nivel_vuelo}}</h2>
+
+ {{#imagen}}
+ <img src="{{imagen}}">
+ {{/imagen}}
+ 
+<table style="margin-left:10em; width: 400px;">
+<tr>
+<td>T. Equipo</td> <td>({{tipo_equipo}})</td>
+</tr>
+<tr>
+<td>Fecha</td> <td>{{fecha}}</td>
+</tr>
+<tr>
+<td>Origen</td> <td>{{origen}}</td>
+</tr>
+<tr>
+<td>Destino</td> <td>{{destino}}</td>
+</tr>
+<tr>
+<td>Asiento</td> <td>{{asiento}}</td>
+</tr>
+<tr>
+<td>Cabina</td> <td>{{cabina}}</td>
+</tr>
+<tr>
+<td>Servicio</td> <td>{{nombre_servicio}}</td>
+</tr>
+<tr>
+<td>Hora</td> <td>{{hora}}</td> 
+
+</tr>
+
+</table>
+
+</div>
+ 
+ </div>
+ 
+     {{/reservas}}
