@@ -1,0 +1,31 @@
+
+{{>header}}
+<br><br><br><br><br>
+<div class="container">
+
+
+        {{#mensaje}} 
+		    <div class="alert alert-success" role="alert">
+ <p>{{{mensaje}}}</p>
+		    </div>
+        {{/mensaje}}
+
+
+<div class="container">
+
+    <form action="/mvc-gaucho-rocket/reserva/procesarDisponibilidad" class="form-neon" method="GET">
+        {{#nivel}}<h2>Nivel={{nivel}}</h2>{{/nivel}}
+    {{#titulo}}
+    <h2>{{titulo}}</h2>
+    <input type="hidden" name="origen" value="{{idOrigen}}">
+    <input type="hidden" name="destino" value="{{idDestino}}"><br>
+        {{#equipos}}
+        <h3>({{tipo}}) {{descripcion}}</h3>
+        {{/equipos}}
+    {{/titulo}}<br><br>
+        <button class="btn btn-outline-secondary">Seleccionar otro vuelo</button>
+</form>
+
+</div>
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{{>footer}}

@@ -33,9 +33,9 @@ $mail->SMTPAuth   = true;
 
 $mail->SMTPOptions = array(     'ssl' => array(         'verify_peer' => false,         'verify_peer_name' => false,         'allow_self_signed' => true     ) );
 
-$mail->Username   = "automizacionesgio.com.ar@gmail.com";
-$mail->Password   = "nzylrovqhdxxykzx";
-$mail->SetFrom('systemenergymgauchorocket@gmail.com', 'Sistema Gaucho Rocket S.A');
+$mail->Username   = "pw2.unlam.2021@gmail.com";
+$mail->Password   = "gmpjtnladlvzrrsl";
+$mail->SetFrom('pw2.unlam.2021@gmail.com', 'Sistema Gaucho Rocket S.A');
 $mail->AddAddress("$email", '');
 $mail->isHTML(true);                                  
 $mail->Subject = "$asunto";

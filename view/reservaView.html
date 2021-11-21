@@ -1,0 +1,46 @@
+
+{{>header}}
+<br><br><br><br><br>
+<div class="container">
+
+
+        {{#mensaje}} 
+		    <div class="alert alert-success" role="alert">
+ <p>{{{mensaje}}}</p>
+		    </div>
+        {{/mensaje}}
+
+
+<div class="container">
+    <h2>Formulario para solicitar Reserva</h2>
+
+    <br>
+<form action="/mvc-gaucho-rocket/medico/procesarReserva" class="form-neon" method="POST">
+<p><label>Nombre:</label><strong>{{nombre}}</strong></p>
+<p><label>Apellido:</label><strong>{{apellido}}</strong></p>
+<p><label>Email:</label><strong>{{email}}</strong></p>
+<br><br>
+<div>
+ <label>Centro Medico:</label>
+ <select name="id_centro" id="id_centro"  class="form-control">
+        {{#centrosMedicos}} 
+		<option value="{{id_centro}}">{{nombre}}</option>
+        {{/centrosMedicos}}
+
+</select>
+</div>
+<br><br>
+<div>
+<label>Fecha :</label><input required type="date" name="fecha" id="fecha"  class="form-control">
+</div>
+
+
+       <p class="text-center" style="margin-top: 40px;">
+            <button type="submit" class="btn btn-raised btn-info btn-sm">Solicitar Turno</button>
+        </p>
+		
+</form>
+
+</div> 
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{{>footer}}

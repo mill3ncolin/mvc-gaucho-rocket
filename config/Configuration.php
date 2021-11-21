@@ -2,6 +2,15 @@
 class Configuration{
 
     private $config;
+    public  function createReporteMensualController()
+    {
+        require_once("controller/reporteMensualController.php");
+        return new ReporteMensualController($this->createReporteModel(),$this->createPrinter());//,$this->createPdf()
+    }
+    public  function createReporteController(){
+        require_once("controller/reporteController.php");
+        return new ReporteController($this->createReporteModel(),$this->createPrinter());
+    }
 
 	    public  function createReservaController(){
         require_once("controller/ReservaController.php");
@@ -48,8 +57,12 @@ class Configuration{
         require_once("controller/cerrarSesion.php");
         return new cerrarSesion();
     }
-
-
+    private  function createReporteModel()
+    {
+        require_once("model/ReporteModel.php");
+        $database = $this->getDatabase();
+        return new ReporteModel($database);
+    }
     private  function createMedicoModel(){
         require_once("model/MedicoModel.php");
         $database = $this->getDatabase();
