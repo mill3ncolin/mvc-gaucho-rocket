@@ -21,6 +21,7 @@ class reporteMensualController{
     }
     public function reporteMensual()
     {
+		echo $_GET["fecha1"];exit;
         array($dataFecha["dataFecha"]=array(
             'fecha1' =>$_GET["fecha1"],
             'fecha2' =>$_GET["fecha2"]));
