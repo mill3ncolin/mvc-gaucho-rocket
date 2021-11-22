@@ -13,6 +13,9 @@ class reporteMensualController{
     }
     public function show()
     {
+		
+		
+		
    echo $this->printer->render("view/reporteMensualView.html");
     }
  
