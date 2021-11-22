@@ -19,45 +19,26 @@
 
 
 </style>
-    {{#reservas}}
+{{#resultadoFecha}}
 <div class="divCentral" >
 <div class="divCentral2" >
-<h1>Comprobante de Reserva</h1>
-<h2>Cod. Reserva: {{codigo_reserva}}</h2>
-<h2>Nivel de vuelo: {{nivel_vuelo}}</h2>
-<h2>Valor: ${{valor}}</h2>
+<h1>Reporte de Facturacion Mensual</h1>
+<h2>fecha inicial: {{fecha1}}</h2>
+<h2>fecha final: {{fecha2}}</h2>
+<h2>Facturacion Mensual: </h2>
 
 <table style="margin-left:10em; width: 400px;">
 <tr>
-<td>T. Equipo</td> <td>({{tipo_equipo}})</td>
-</tr>
-<tr>
-<td>Fecha</td> <td>{{fecha}}</td>
-</tr>
-<tr>
-<td>Origen</td> <td>{{origen}}</td>
-</tr>
-<tr>
-<td>Destino</td> <td>{{destino}}</td>
-</tr>
-<tr>
-<td>Asiento</td> <td>{{asiento}}</td>
-</tr>
-<tr>
-<td>Cabina</td> <td>{{cabina}}</td>
-</tr>
-<tr>
-<td>Servicio</td> <td>{{nombre_servicio}}</td>
-</tr>
-<tr>
-<td>Hora</td> <td>{{hora}}</td> 
 
+ <td>{{Facturacion_Mensual}}</td>
+</tr>
+<tr>
 </tr>
 
 </table>
-
+{{/resultadoFecha}}  
 </div>
  
  </div>
  
-     {{/reservas}}
+ {{>footer}}

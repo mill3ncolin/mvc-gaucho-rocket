@@ -2,10 +2,15 @@
 class Configuration{
 
     private $config;
+    public  function createReporteCabinaMasVendidaController()
+    {
+        require_once("controller/reporteCabinaMasVendidaController.php");
+        return new ReporteMensualController($this->createReporteModel(),$this->createPrinter(),$this->createPdf());
+    }
     public  function createReporteMensualController()
     {
         require_once("controller/reporteMensualController.php");
-        return new ReporteMensualController($this->createReporteModel(),$this->createPrinter());//,$this->createPdf()
+        return new ReporteMensualController($this->createReporteModel(),$this->createPrinter(),$this->createPdf());
     }
     public  function createReporteController(){
         require_once("controller/reporteController.php");

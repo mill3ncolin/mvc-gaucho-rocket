@@ -1,5 +1,5 @@
 <?php
-require_once "third-party/fpdf/fpdf.php"
+require_once "third-party/fpdf/fpdf.php";
 class myPdf extends FPDF
 {
 function Header()
