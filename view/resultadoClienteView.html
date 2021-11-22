@@ -1,0 +1,39 @@
+{{>headerSistema}}
+<br><br><br><br><br>
+<div class="container">
+
+         <h2>Reporte de  Usuario</h2>
+         
+         
+        <table>
+	
+
+              
+         	     {{#resultadoCLiente}}
+
+                  <tr>                 
+        <th>
+		<label>Nombre:</label>
+		{{nombre}}<br>
+		
+				<label>Apellido:</label>
+        {{apellido}}<br>
+				<label>Email:</label>
+
+        {{email}}<br>
+				<label>Importe gastado:</label>
+
+        ${{valor}}</th>
+		    </tr>
+ 
+
+     
+    </table>
+   
+</div>
+
+<a href="/mvc-gaucho-rocket/reporteMensual/resultadoClientePdf?id_usuario={{id_usuario}}" target="_blank" class="btn btn-success"> Descargar PDF</a>
+
+ 		 {{/resultadoCLiente}} 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{{>footer}}

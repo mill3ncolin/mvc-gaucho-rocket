@@ -1,0 +1,37 @@
+{{>headerSistema}}
+<br><br><br><br><br>
+<div class="container">
+
+         <h2>Reporte Por Cliente </h2>
+
+      
+	  
+	  <form action="/mvc-gaucho-rocket/reporteMensual/resultadoCliente" class="form-neon" method="GET">
+ 
+            <p></p><label>Clientes:</label>
+			
+			
+<select required name="id_cliente" class="form-control">
+         {{#clientes}}
+		<option value="{{id}}">{{email}}</option>
+        {{/clientes}}
+
+</select>
+			
+			
+			</p>
+            <br><br>
+            <div>
+                <p class="text-center" style="margin-top: 40px;">
+                <button type="submit" class="btn btn-raised btn-info btn-sm">Reporte Mensual</button>
+            </p>
+            </div>
+        </form>
+		
+		
+</div>
+
+ 
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{{>footer}}

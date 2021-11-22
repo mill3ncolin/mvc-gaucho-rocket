@@ -22,5 +22,24 @@ class reporteModel
         WHERE estado ='abonado' GROUP BY  RES.id_cabina ORDER BY RES.id_cabina DESC;";
         return $this->dataBase->query($query);
 	}
+	
+	
+	    public function dameClientes(){
+         $query="SELECT * FROM `usuario` where id>1";
+        return $this->dataBase->query($query);
+	}
+
+
+    public function filtradoPorCliente($idCliente)
+    {
+        
+        $query="SELECT SUM(vuelo.valor) AS valor , usuario.nombre,usuario.apellido,usuario.email,usuario.id as id_usuario
+		FROM reserva
+		left join vuelo on vuelo.id_vuelo=reserva.id_vuelo
+		left join usuario on reserva.id_usuario=usuario.id
+		
+		where reserva.id_usuario='$idCliente' and reserva.estado='Abonado' ";
+         return $this->dataBase->query($query);
+	}
 
 }

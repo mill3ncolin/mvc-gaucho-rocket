@@ -41,4 +41,38 @@ public function pdf() {
         $this->pdf->generarPdf();
 
     } 
+	
+	
+	public function reportePorCliente()
+    {
+	$clientes["clientes"]= $this->reporteModel->dameClientes();
+
+   echo $this->printer->render("view/reporteClienteView.html",$clientes);
+    }
+	
+	
+		public function resultadoCliente()
+    {
+		
+		$idCliente=$_GET["id_cliente"];
+        $resultadoMensual["resultadoCLiente"]= $this->reporteModel->filtradoPorCliente($idCliente);
+
+		echo $this->printer->render("view/resultadoClienteView.html",$resultadoMensual);
+		}
+		
+		
+		
+			
+		public function resultadoClientePdf()
+    {
+		
+		$idCliente=$_GET["id_usuario"];
+        $resultadoMensual["resultadoCLiente"]= $this->reporteModel->filtradoPorCliente($idCliente);
+
+		echo $this->printer->render("view/imprimirReporteClienteView.html",$resultadoMensual);
+		$this->pdf->generarPdf();
+
+		}
+	
+	
 }
