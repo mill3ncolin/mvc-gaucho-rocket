@@ -56,12 +56,24 @@ class MedicoController{
 	
 	    public function procesarTurno()
     {
-		
+		$idCentro=$_POST['id_centro'];
          $data = array(
-            'id_centro' => $_POST['id_centro'],
+            'id_centro' => $idCentro,
             'fecha' => $_POST['fecha'], 
             'id_usuario' => $_SESSION["id_usuario"], 
         );
+		$hoy=date("Y-m-d");
+		if($_POST['fecha']>$hoy){
+ 			
+	
+ 
+        $turnosDisponibles=$this->medicoModel->validarTurnos($idCentro);
+		$cantidadTurnos=$turnosDisponibles[0]["turnos"];
+		if($cantidadTurnos>0){
+			
+			
+      //  $turnosDisponibles=$this->medicoModel->actualizarTurnos($idCentro,$cantidadTurnos);
+
 
         $id_turno=$this->medicoModel->crearTurno($data);
 		$data["mensaje"] = "";
@@ -78,7 +90,28 @@ $asunto="Validar Email Turno";
 		
 		
          echo $this->printer->render("view/linkEmailTurnoView.html", $data);
+		 
+				}else{
+							$centrosMedicos = $this->medicoModel->dameCentros();
+							$data["centrosMedicos"] = $centrosMedicos;
+							$data["mensaje"] = "El centro medico seleccionado no cuenta con turnos disponibles";
+							
+							 echo $this->printer->render("view/turnoView.html", $data);
+				}
+		}
+		else{
 
+		$centrosMedicos = $this->medicoModel->dameCentros();
+		$data["centrosMedicos"] = $centrosMedicos;
+		$data["mensaje"] = "Debe ingresar una fecha mayor a la actual";
+		
+         echo $this->printer->render("view/turnoView.html", $data);
+		 
+		 
+
+		}
+		
+		
     }
 	
 	

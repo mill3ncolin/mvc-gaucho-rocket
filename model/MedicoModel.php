@@ -17,6 +17,17 @@ class MedicoModel
  
 	 
 	
+		public function validarTurnos($id_centro){
+		 $SQL = "SELECT *
+			FROM  centros
+ 			where id_centro=$id_centro 
+		 ";
+		 return $this->database->query($SQL);
+		}
+	
+
+
+	
 		public function dameTurno($id_turno){
 		 $SQL = "SELECT turnos.*,centros.nombre,centros.descripcion
 			FROM  turnos

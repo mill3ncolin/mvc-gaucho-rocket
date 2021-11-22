@@ -23,6 +23,7 @@ class ReservaModel
         return $destino[0]["nombre"];
   }
   public function buscarDisponibilidadDeVuelo($origen,$destino){
+	  $hoy=date("Y-m-d");
         return $this->database->query("
 		SELECT 
 		V.*, 
@@ -33,7 +34,7 @@ class ReservaModel
 		FROM vuelo V 
 		JOIN destinos Origen ON V.id_origen=Origen.id_destino 
 		JOIN destinos Destino ON V.id_destino=Destino.id_destino         
-		WHERE Origen.id_destino='$origen' AND Destino.id_destino='$destino';");
+		WHERE Origen.id_destino='$origen' AND Destino.id_destino='$destino' and V.fecha>='$hoy' ;");
 		
 		//JOIN equipo E ON V.id_equipo=E.matricula 
 		//JOIN tipo_de_equipo TE ON E.tipo=TE.tipo
