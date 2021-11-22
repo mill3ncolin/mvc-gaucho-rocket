@@ -3,24 +3,23 @@
 <div class="container">
 
          <h2>Reporte de Cabina Mas Vendida </h2>
-
+         
+         
         <table>
-            {{#resultadoCabina}}
-            <tr>
-                <th>Cabina Mas Vendida </th>
-                
-                <th>Cantidad </th>
-
-                </tr>
-                
-        <th>({{Cabina_mas_Vendida}})</th>
-        <th>({{Cantidad}})</th>
-                {{/resultadoCabina}}  
+            {#resultadoCabina}}
+                 <tr>
+                <th>Cabina Mas Vendida </th> <th>Cantidad </th>
+                 
+                        </tr>
+                          
+        <th>({{Cabina_mas_Vendida}})</th> <th>({{CANTIDAD})</th>
+        {{/resultadoCabina}} 
         <tr>
       
         </tr>
-
+         
     </table>
+   
 </div>
 <!---<td><a href="/mvc-gaucho-rocket/reporteMensual/pdf?fecha1={{fecha1}}" target="_blank" class="btn btn-success"> Descargar PDF</a></a></td>-->
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

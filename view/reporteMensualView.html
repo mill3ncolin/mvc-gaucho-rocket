@@ -6,6 +6,7 @@
          <h2>Reporte de Facturacion Mensual </h2>
 
         <br>
+       
         <form action="/mvc-gaucho-rocket/reporteMensual/reporteMensual" class="form-neon" method="GET">
             <p></p><label>Fecha Mensual Inicial :</label><strong><input required type="date" name="fecha1" id="fecha1"  class="form-control"></strong></p>
             <p></p><label>Fecha Mensual Final :</label><strong><input required type="date" name="fecha2" id="fecha2"  class="form-control"></strong></p>
@@ -17,18 +18,7 @@
             </div>
         </form>
 
-    <table>
-            <tr>
-                <th>Facturacion Mensual</th>
-
-                </tr>
-        {{#dataFecha}}
-        <th>({{Facturacion_Mensual}})</th>
-        <tr>
-        {{/dataFecha}}
-        </tr>
-
-    </table>
+        <!---<td><a href="/mvc-gaucho-rocket/reportes/pdf?id_reserva={{id_reserva}}" target="_blank" class="btn btn-success"> Descargar PDF</a></a></td>-->
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 {{>footer}}
