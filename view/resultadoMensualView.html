@@ -1,4 +1,4 @@
-
+{{>headerSistema}}
 <br><br><br><br><br>
 <div class="container">
 
@@ -11,7 +11,7 @@
 
                 </tr>
                 
-        <th>({{Facturacion_Mensual}})</th>
+        <th>($ {{Facturacion_Mensual}})</th>
                 {{/resultadoFecha}}  
         <tr>
       
@@ -19,6 +19,11 @@
 
     </table>
 </div>
-<!---<td><a href="/mvc-gaucho-rocket/reporteMensual/pdf?fecha1={{fecha1}}" target="_blank" class="btn btn-success"> Descargar PDF</a></a></td>-->
+
+ 
+
+<a href="/mvc-gaucho-rocket/reporteMensual/pdf?fecha1={{fecha1}}&&fecha2={{fecha2}}" target="_blank" class="btn btn-success"> Descargar PDF</a>
+
+
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 {{>footer}}

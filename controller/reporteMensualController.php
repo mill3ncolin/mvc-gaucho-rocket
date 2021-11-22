@@ -5,11 +5,11 @@ class reporteMensualController{
     private $printer;
     private $pdf;
 
-    public function __construct($reporteModel,$printer){ //,$pdf
+    public function __construct($reporteModel,$printer,$pdf){ 
 
         $this->reporteModel=$reporteModel;
         $this->printer=$printer;
-        //$this->pdf=$pdf;
+        $this->pdf=$pdf;
     }
     public function show()
     {
@@ -17,11 +17,14 @@ class reporteMensualController{
     }
  
     public function reporteMensual()
-    {      $dataFecha=array(
+    {     
+ $dataFechaArray=array(
         'fecha1'=>$_GET["fecha1"],
           'fecha2'=>$_GET["fecha2"]);
-             $resultadoMensual["resultadoFecha"]= $this->reporteModel->reporteMensual($dataFecha);
-        
+        $resultadoMensual["resultadoFecha"]= $this->reporteModel->reporteMensual($dataFechaArray);
+        $resultadoMensual["fecha1"]= $_GET["fecha1"];
+        $resultadoMensual["fecha2"]=$_GET["fecha2"];
+ 		
         echo $this->printer->render("view/resultadoMensualView.html",$resultadoMensual);
     }
 
@@ -31,6 +34,9 @@ public function pdf() {
         'fecha1'=>$_GET["fecha1"],
       'fecha2'=>$_GET["fecha2"]);
          $resultadoMensual["resultadoFecha"]= $this->reporteModel->reporteMensual($dataFecha);
+		         $resultadoMensual["fecha1"]= $_GET["fecha1"];
+        $resultadoMensual["fecha2"]=$_GET["fecha2"];
+		
      echo $this->printer->render("view/imprimirReporteMensualView.html",$resultadoMensual);
         $this->pdf->generarPdf();
 

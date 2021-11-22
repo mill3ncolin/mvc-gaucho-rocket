@@ -5,23 +5,29 @@ class reporteMensualController{
     private $printer;
     private $pdf;
 
-    public function __construct($reporteModel,$printer){ //,$pdf
+    public function __construct($reporteModel,$printer,$pdf){ 
 
         $this->reporteModel=$reporteModel;
         $this->printer=$printer;
-        //$this->pdf=$pdf;
+        $this->pdf=$pdf;
     }
     public function show()
     {
-   echo $this->printer->render("view/resultadoCabinaMasVendidaView.html");
-    }
+       $resultadoCabinaMasVendida["resultadoCabina"]= $this->reporteModel->reporteCabinaMasVendida();
+       echo $this->printer->render("view/resultadoCabinaMasVendidaView.html",$resultadoCabinaMasVendida);
+
+	}
  
-    public function reporteCabinaMasVendida(){
-    
-             $resultadoCabinaMasVendida["resultadoCabina"]= $this->reporteModel->reporteCabinaMasVendida();
-        
-        echo $this->printer->render("view/resultadoCabinaMasVendidaView.html",$resultadoCabinaMasVendida);
-    }
+ 
+     public function pdfCabinaMasVendida()
+    {
+       $resultadoCabinaMasVendida["resultadoCabina"]= $this->reporteModel->reporteCabinaMasVendida();
+       echo $this->printer->render("view/imprimirCabinaMasVendidaView.html",$resultadoCabinaMasVendida);
+        $this->pdf->generarPdf();
+	}
+	
+	
+ 
     
 
 
