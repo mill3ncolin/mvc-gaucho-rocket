@@ -6,7 +6,7 @@ class loginModel{
         $this->dataBase=$dataBase;
     }
     public function iniciarSesion($email, $clave){
-        $consulta="SELECT * FROM usuario WHERE email=? AND clave=?";
+        $consulta="SELECT * FROM usuario WHERE email=? AND clave=? and codigo_alta is null";
         return $this->dataBase->queryLogin($consulta, $email, $clave);
     }
     public function getUserRol($idUsuario){

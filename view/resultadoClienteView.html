@@ -1,6 +1,8 @@
 {{>headerSistema}}
 <br><br><br><br><br>
-<div class="container">
+         	     {{#resultadoCLiente}}
+
+<div class="container" style=" margin-left:5em;">
 
          <h2>Reporte de  Usuario</h2>
          
@@ -9,7 +11,6 @@
 	
 
               
-         	     {{#resultadoCLiente}}
 
                   <tr>                 
         <th>
@@ -29,10 +30,11 @@
 
      
     </table>
-   
-</div>
-
+   <br>
+<p>
 <a href="/mvc-gaucho-rocket/reporteMensual/resultadoClientePdf?id_usuario={{id_usuario}}" target="_blank" class="btn btn-success"> Descargar PDF</a>
+</p>
+</div>
 
  		 {{/resultadoCLiente}} 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

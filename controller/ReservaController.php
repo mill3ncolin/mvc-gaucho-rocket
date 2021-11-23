@@ -15,6 +15,11 @@ class ReservaController{
     public function show(){
         if (isset($_SESSION["id_usuario"])) {
 			
+         if ($_SESSION["id_rol"]==1){
+            header("Location: /mvc-gaucho-rocket/sistema");
+			exit;
+			}
+		
 			$dameNivel = $this->createMedicoModel->dameNivel($_SESSION["id_usuario"]);
 			if(count($dameNivel)>0){
             $this->solicitarReserva();

@@ -19,6 +19,7 @@ class loginController{
 
     public function showSesion($id){
         $id_rol=$this->loginModel->getUserRol($id);
+		$_SESSION["id_rol"]=$id_rol;
         if ($id_rol==1){
             header("Location: /mvc-gaucho-rocket/sistema");
         }
